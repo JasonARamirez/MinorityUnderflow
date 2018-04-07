@@ -52,6 +52,10 @@ p {
   text-transform: uppercase;
 }
 
+.copyRight {
+  margin: 0 !important;
+}
+
 .section-heading .section-heading-upper {
   display: block;
   font-size: 1rem;
