@@ -28,24 +28,27 @@ exports.Question = function(questionID, questionStr, askerID, askerAnonymousName
 
 }
 
-exports.AnonymousName = function(userID, questionIDs, anonymousName, cb) {
+exports.AnonymousName = function(userID, questionID, anonymousName, cb) {
+  var data = {};
+  data[questionID] = anonymousName;
   var anonymousName = {
     'userID':userID,
-    'questionIDs':questionIDs,
-    'anonymousName':anonymousName
+    'questionIDs': data
   }
+  var anonymousNameCollection = db.get().collection('anonymous_name_data');
   anonymousNameCollection.insertOne(anonymousName, function(err, result){
     cb(err);
   });
 
 }
 
-exports.Responses = function(responderID, questionID, questionStr, anonymousName, time, numUpvotes, cb) {
+exports.Responses = function(responderID, questionID, questionStr, responseStr, anonymousName, time, numUpvotes, cb) {
   var response = {
     'responderID':responderID,
     'questionID':questionID,
     'questionString':questionStr,
     'anonymousName': anonymousName,
+    'responseString' : responseStr,
     'time':time,
     'numberOfUpvotes':numUpvotes
   }

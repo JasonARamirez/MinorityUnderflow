@@ -30,3 +30,8 @@ exports.ResponderData = function(responderID, cb) {
   var responderCollection = db.get().collection('responder_data')
   responderCollection.find({"responder":responder}, cb)
 }
+
+exports.allQuestions = function(cb) {
+  var questionCollection = db.get().collection('question_data');
+  questionCollection.find({}).toArray(cb);
+}
