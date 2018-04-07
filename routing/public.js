@@ -17,7 +17,7 @@ router.get('/main.js', function(req, res) {
   res.sendFile(__dirname + '/public/javascript/main.js');
 });
 
-routing.get('/main.css', function(req, res) {
+router.get('/main.css', function(req, res) {
   res.sendFile(__dirname + '/public/css/main.css');
 });
 
