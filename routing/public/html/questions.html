@@ -2,7 +2,15 @@
 <html lang="en">
 
   <head>
+    <!-- Bootstrap core JavaScript -->
+    <script src="/bootstrap.bundle.min.js"></script>
 
+    <!-- Our JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"
+            integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+            crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.compatibility.js"></script>
     <style>
        html {
          margin: 0px;
@@ -87,134 +95,9 @@
 
     <div class="comments-wrap">
       <div class="container">
-        <h2>Question 1</h1>
-          <div id="comments" class="row">
-            <div class="col-full">
-              <!-- commentlist -->
-              <ol class="commentlist">
-
-                    <li class="depth-1 comment">
-
-                        <div class="comment__content">
-
-                            <div class="comment__info">
-                                <cite>Itachi Uchiha</cite>
-
-                                <div class="comment__meta">
-                                    <time class="comment__time">Dec 16, 2017 @ 23:05</time>
-                                    <a class="reply" href="#0">Reply</a>
-                                </div>
-                            </div>
-
-                            <div class="comment__text">
-                            <p>Adhuc quaerendum est ne, vis ut harum tantas noluisse, id suas iisque mei. Nec te inani ponderum vulputate,
-                            facilisi expetenda has et. Iudico dictas scriptorem an vim, ei alia mentitum est, ne has voluptua praesent.</p>
-                            </div>
-
-                        </div>
-
-                    </li> <!-- end comment level 1 -->
-
-                    <li class="thread-alt depth-1 comment">
-
-                        <div class="comment__content">
-
-                            <div class="comment__info">
-                            <cite>John Doe</cite>
-
-                            <div class="comment__meta">
-                                <time class="comment__time">Dec 16, 2017 @ 24:05</time>
-                                <a class="reply" href="#0">Reply</a>
-                            </div>
-                            </div>
-
-                            <div class="comment__text">
-                            <p>Sumo euismod dissentiunt ne sit, ad eos iudico qualisque adversarium, tota falli et mei. Esse euismod
-                            urbanitas ut sed, et duo scaevola pericula splendide. Primis veritus contentiones nec ad, nec et
-                            tantas semper delicatissimi.</p>
-                            </div>
-
-                        </div>
-
-                        <ul class="children">
-
-                            <li class="depth-2 comment">
-
-                                <div class="comment__content">
-
-                                    <div class="comment__info">
-                                        <cite>Kakashi Hatake</cite>
-
-                                        <div class="comment__meta">
-                                            <time class="comment__time">Dec 16, 2017 @ 25:05</time>
-                                            <a class="reply" href="#0">Reply</a>
-                                        </div>
-                                    </div>
-
-                                    <div class="comment__text">
-                                        <p>Duis sed odio sit amet nibh vulputate
-                                        cursus a sit amet mauris. Morbi accumsan ipsum velit. Duis sed odio sit amet nibh vulputate
-                                        cursus a sit amet mauris</p>
-                                    </div>
-
-                                </div>
-
-                                <ul class="children">
-
-                                    <li class="depth-3 comment">
-
-                                        <div class="comment__content">
-
-                                            <div class="comment__info">
-                                            <cite>John Doe</cite>
-
-                                            <div class="comment__meta">
-                                                <time class="comment__time">Dec 16, 2017 @ 25:15</time>
-                                                <a class="reply" href="#0">Reply</a>
-                                            </div>
-                                            </div>
-
-                                            <div class="comment__text">
-                                            <p>Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius. Claritas est
-                                            etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum.</p>
-                                            </div>
-
-                                        </div>
-
-                                    </li>
-
-                                </ul>
-
-                            </li>
-
-                        </ul>
-
-                    </li> <!-- end comment level 1 -->
-
-                    <li class="depth-1 comment">
-
-                        <div class="comment__content">
-
-                            <div class="comment__info">
-                            <cite>Shikamaru Nara</cite>
-
-                            <div class="comment__meta">
-                                <time class="comment-time">Dec 16, 2017 @ 25:15</time>
-                                <a class="reply" href="#">Reply</a>
-                            </div>
-                            </div>
-
-                            <div class="comment__text">
-                            <p>Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem.</p>
-                            </div>
-
-                        </div>
-
-                    </li>  <!-- end comment level 1 -->
-
-                </ol> <!-- end commentlist -->
-            </div> <!-- end col-full -->
-          </div> <!-- end row comments -->
+        <h2 id="anonName">Name</h2>
+        <h3 id="question">Question</h3>
+          <div id="comments" class="row"></div> <!-- end row comments -->
         <form action="action_page.php">
           <h4 align="center">Make A Comment</h4>
           <input type="text" id="fname" name="firstname" placeholder="Anonymous Name">
@@ -224,6 +107,7 @@
       </div>
     </div> <!-- end comments-wrap -->
 </section> <!-- s-content -->
+  <script src="/questions.js"></script>
 
 
 
@@ -233,15 +117,7 @@
       </div>
     </footer>
 
-    <!-- Bootstrap core JavaScript -->
-    <script src="/bootstrap.bundle.min.js"></script>
 
-    <!-- Our JavaScript -->
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js"
-            integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-            crossorigin="anonymous">
-    </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.compatibility.js"></script>
 
   </body>
 
