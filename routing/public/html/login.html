@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,11 +10,9 @@
          width: 100%;
        }
        body {
-         background-color: #3E87FE;
          margin: 0px;
          min-height: 100%;
          width: 100%;
-         font: courier;
        }
     </style>
 
@@ -22,11 +21,10 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Personal Page</title>
+    <title>Login Page</title>
 
     <!-- Bootstrap core CSS -->
     <link href="/bootstrap.css" rel="stylesheet">
-    <img src="logo.png" alt="logo" width="250" height="250" align="left" style="margin:10px 30px">
 
     <!-- Custom fonts for this template -->
     <link href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
@@ -35,6 +33,8 @@
     <!-- Custom styles for this template -->
     <link href="/business-casual.css" rel="stylesheet">
 
+    <img src="logo.png" alt="logo" width="250" height="250" align="left" style="margin:10px 30px">
+
   </head>
 
   <body>
@@ -42,14 +42,14 @@
       <h1 class="site-heading text-center text-white d-none d-lg-block">
         <span class="site-heading-upper text-primary mb-3">Code Camp 2018</span>
         <span class="site-heading-lower">Minority Underflow</span>
-        <span class="site-heading-upper text-primary mb-3">Personal Page</span>
+        <span class="site-heading-upper text-primary mb-3">Login</span>
       </h1>
     </div>
 
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark py-lg-4" id="mainNav">
       <div class="container">
-        <a class="navbar-brand text-uppercase text-expanded font-weight-bold d-lg-none" href="#">Start Bootstrap</a>
+        <a class="navbar-brand text-uppercase text-expanded font-weight-bold d-lg-none" href="#">Minority Underflow</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -60,22 +60,39 @@
                 <span class="sr-only">(current)</span>
               </a>
             </li>
-            <li class="nav-item px-lg-4">
+            <li class="nav-item active px-lg-4">
               <a class="nav-link text-uppercase text-expanded" href="about.html">About</a>
             </li>
-            <li class="nav-item active px-lg-4">
+            <li class="nav-item px-lg-4">
               <a class="nav-link text-uppercase text-expanded" href="personal.html">Personal</a>
             </li>
             <li class="nav-item px-lg-4">
               <a class="nav-link text-uppercase text-expanded" href="questions.html">Questions</a>
             </li>
-            <li class="nav-item px-lg-4">
-              <a class="nav-link text-uppercase text-expanded" href="login.html">Login</a>
-            </li>
           </ul>
         </div>
       </div>
     </nav>
+
+    <div class="login-page">
+      <script src="/login.js"></script>
+      <link href="/login.css" rel="stylesheet">
+      <div class="form">
+        <form class="register-form">
+          <input type="text" placeholder="name"/>
+          <input type="password" placeholder="password"/>
+          <input type="text" placeholder="email address"/>
+          <button>create</button>
+          <p class="message">Already registered? <a href="#">Sign In</a></p>
+        </form>
+        <form class="login-form">
+          <input type="text" placeholder="username"/>
+          <input type="password" placeholder="password"/>
+          <button>login</button>
+          <p class="message">Not registered? <a href="#">Create an account</a></p>
+        </form>
+      </div>
+    </div>
 
     <footer class="footer text-faded text-center py-5">
       <div class="container">

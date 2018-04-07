@@ -13,6 +13,10 @@ router.get('/questions.html', function(req, res) {
   res.sendFile(__dirname + '/public/html/questions.html');
 });
 
+router.get('/login.html', function(req, res) {
+  res.sendFile(__dirname + '/public/html/login.html');
+});
+
 router.get('/bootstrap.bundle.js', function(req, res) {
   res.sendFile(__dirname + '/public/javascript/bootstrap.bundle.js');
 });
@@ -45,6 +49,10 @@ router.get('/bootstrap.min.js.map', function(req, res) {
   res.sendFile(__dirname + '/public/javascript/bootstrap.min.js.map');
 });
 
+router.get('/login.js', function(req, res) {
+  res.sendFile(__dirname + '/public/javascript/login.js');
+});
+
 router.get('/main.css', function(req, res) {
   res.sendFile(__dirname + '/public/css/main.css');
 });
@@ -69,6 +77,9 @@ router.get('/bootstrap.min.css', function(req, res){
   res.sendFile(__dirname + '/public/css/bootstrap.min.css');
 })
 
+router.get('/login.css', function(req, res){
+  res.sendFile(__dirname + '/public/css/login.css');
+})
 
 router.get('/background.jpg', function(req, res){
   res.sendFile(__dirname + '/public/images/background.jpg');
