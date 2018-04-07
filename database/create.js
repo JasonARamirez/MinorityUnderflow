@@ -18,7 +18,8 @@ exports.Question = function(questionID, questionStr, askerID, askerAnonymousName
     'questionString':questionStr,
     'askerID':askerID,
     'askerAnonymousName':askerAnonymousName,
-    'time':time
+    'time':time,
+    'responses' : []
   }
   var questionCollection = db.get().collection('question_data');
   questionCollection.insertOne(question, function(err, result){
@@ -48,7 +49,8 @@ exports.Responses = function(responderID, questionID, questionStr, anonymousName
     'time':time,
     'numberOfUpvotes':numUpvotes
   }
-  userCollection.insertOne(user, function(err, result){
+  var responseCollection = db.get().collection('responder_data');
+  responseCollection.insertOne(response, function(err, result){
     cb(err);
   });
 

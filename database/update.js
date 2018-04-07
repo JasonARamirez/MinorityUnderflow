@@ -17,7 +17,7 @@ exports.addResponseToQuestion = function(questionID, anonymousName, responseStr,
 
 }
 
-exports.chooseAnonymousName(questionID, userID, anonymousName, cb) {
+exports.chooseAnonymousName = function(questionID, userID, anonymousName, cb) {
   read.AnonymousNameData(userID, function(err, result) {
     var questionIDs = results.questionIDs;
     questionIDs[questionID] = anonymousName;
