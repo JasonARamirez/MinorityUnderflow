@@ -114,3 +114,32 @@ exports.createQuestion = function(anonymousName, userID, question, cb) {
     }
   );
 }
+
+exports.getLatestQuestions = function(cb) {
+  dbRead.allQuestions(function(err, result) {
+    if (err != null) {
+      console.log(err);
+      cb(null, 'Internal Server Error 1');
+    } else {
+      var toSend = [];
+      for (var questionNum in result) {
+        var toInsert = {
+          questionID : result[questionNum].questionID,
+          questionStr : result[questionNum].questionString,
+          time : result[questionNum].time
+        }
+        toSend.push(toInsert);
+      }
+
+      console.log(toSend);
+
+      var myfunc = function(a, b) {
+        return 0 - (a.time - b.time);
+      }
+
+      toSend.sort(myfunc);
+
+      cb(toSend);
+    }
+  });
+}
