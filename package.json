@@ -1,0 +1,13 @@
+{
+  "name": "Minority_Underflow",
+  "version": "1.0.0",
+  "description": "Digital Women Code Camp 2018",
+  "main": "index.js",
+  "author": "Jason Ramirez, jp51371@iastate.edu",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.16.2",
+    "mongodb": "^3.0.5",
+    "npm": "^5.8.0"
+  }
+}
