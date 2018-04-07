@@ -19,12 +19,12 @@ exports.addResponseToQuestion = function(questionID, anonymousName, responseStr,
 
 exports.chooseAnonymousName = function(questionID, userID, anonymousName, cb) {
   read.AnonymousNameData(userID, function(err, result) {
-    var questionIDs = results.questionIDs;
+    var questionIDs = result.questionIDs;
     questionIDs[questionID] = anonymousName;
 
     var newvalue = { $set: {questionIDs: questionIDs} };
     var anonymousNameCollection = db.get().collection('anonymous_name_data')
-    questionCollection.updateOne({'userID':userID}, newvalue, cb);
+    anonymousNameCollection.updateOne({'userID':userID}, newvalue, cb);
   })
 
 }

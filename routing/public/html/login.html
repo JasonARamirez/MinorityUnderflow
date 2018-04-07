@@ -2,7 +2,17 @@
 <!DOCTYPE html>
 <html lang="en">
 
-  <head>
+  <head>    
+        <!-- Bootstrap core JavaScript -->
+        <script src="/bootstrap.bundle.min.js"></script>
+
+        <!-- Our JavaScript -->
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js"
+                integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+                crossorigin="anonymous">
+        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.compatibility.js"></script>
+
     <style>
        html {
          margin: 0px;
@@ -78,17 +88,16 @@
       <script src="/login.js"></script>
       <div class="form">
         <form class="register-form">
-          <input type="text" placeholder="name"/>
-          <input type="password" placeholder="password"/>
-          <input type="text" placeholder="email address"/>
-          <button>create</button>
+          <input type="text" placeholder="username" id="username"/>
+          <input type="password" placeholder="password" id="password"/>
+          <input type="button" onclick="createAccountFunction()" value="Register"/>
           <p class="message">Already registered? <a href="#">Sign In</a></p>
         </form>
         <form class="login-form">
-          <input type="text" placeholder="username"/>
-          <input type="password" placeholder="password"/>
-          <button>login</button>
-          <p class="message">Not registered? <a href="#">Create an account</a></p>
+          <input type="text" placeholder="username" id="login-username"/>
+          <input type="password" placeholder="password" id="login-password"/>
+          <input type="button" onclick="loginFunction()" value="Login"/>
+          <p class="message">Not registered? </p>
         </form>
       </div>
     </div>
@@ -98,16 +107,6 @@
         <p class="copyRight small">Copyright &copy; Minority Underflow 2018</p>
       </div>
     </footer>
-
-    <!-- Bootstrap core JavaScript -->
-    <script src="/bootstrap.bundle.min.js"></script>
-
-    <!-- Our JavaScript -->
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js"
-            integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-            crossorigin="anonymous">
-    </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.compatibility.js"></script>
 
   </body>
 

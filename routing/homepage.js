@@ -50,10 +50,14 @@ router.get('/createQuestion', function(req, res) {
 
 router.get('/getLatestQuestions', function(req, res) {
   console.log('/homepage/getLatestQuestions');
-  var data = {
-    message : '/homepage/getLatestQuestions is not implemented yet'
-  }
-  res.send(JSON.stringify(data));
+
+  homepage.getLatestQuestions(function(questionsArr, err) {
+    if(err == null) {
+      res.send(JSON.stringify({'success':true, 'questionsArr':questionsArr}));
+    } else {
+      res.send(JSON.stringify({'success':false, 'message':err}));
+    }
+  });
 });
 
 module.exports = router;
