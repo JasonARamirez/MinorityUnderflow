@@ -69,7 +69,7 @@ router.get('/bootstrap.min.css', function(req, res){
   res.sendFile(__dirname + '/public/css/bootstrap.min.css');
 })
 
-router.get('logo.png', function(req, res){
+router.get('/logo.png', function(req, res){
   res.sendFile(__dirname + '/public/images/logo.png')
 })
 
