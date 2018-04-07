@@ -93,6 +93,10 @@ router.get('/logo.png', function(req, res){
   res.sendFile(__dirname + '/public/images/logo.png')
 })
 
+router.get('/index.js', function(res, res) {
+  res.sendFile(__dirname + '/public/javascript/index.js');
+});
+
 
 
 
