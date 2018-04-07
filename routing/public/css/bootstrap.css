@@ -8820,7 +8820,7 @@ button.background-dark:focus {
 }
 
 .text-white {
-  color: #fff !important;
+  color: rgba(0, 195, 191, 1) !important;
 }
 
 .text-primary {
