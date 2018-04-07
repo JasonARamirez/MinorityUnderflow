@@ -1,6 +1,7 @@
 var async = require('async');
 var dbCreate = require('../database/create');
 var dbRead = require('../database/read');
+var dbUpdate = require('../database/update');
 var utils = require('./utils');
 
 exports.login = function(username, password, cb) {
@@ -83,7 +84,30 @@ exports.createQuestion = function(anonymousName, userID, question, cb) {
           if(err != null) {
             cb(null, 'Internal Server Error 2');
           } else {
-            cb(newQuestionID);
+            dbRead.AnonymousNameData(userID, function(err, result) {
+              if (err != null) {
+                console.log(err);
+                cb(null, 'Internal Server Error 3');
+              } else if (result != null) {
+                dbUpdate.chooseAnonymousName(newQuestionID, userID, anonymousName, function(err) {
+                  if (err != null) {
+                    console.log(err);
+                    cb(null, 'Internal Server Error 3');
+                  } else {
+                    cb(newQuestionID);
+                  }
+                });
+              } else {
+                dbCreate.AnonymousName(userID, newQuestionID, anonymousName, function(err) {
+                  if (err != null) {
+                    console.log(err);
+                    cb(null, 'Internal Server Error 4');
+                  } else {
+                    cb(newQuestionID);
+                  }
+                });
+              }
+            });
           }
         });
       }
