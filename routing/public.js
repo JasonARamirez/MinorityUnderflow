@@ -69,6 +69,14 @@ router.get('/bootstrap.min.css', function(req, res){
   res.sendFile(__dirname + '/public/css/bootstrap.min.css');
 })
 
+router.get('/background.jpg', function(req, res){
+  res.sendFile(__dirname + '/public/images/background.jpg');
+})
+
+router.get('/about.jpg', function(req, res){
+  res.sendFile(__dirname + '/public/images/about.jpg');
+})
+
 
 
 module.exports = router;
