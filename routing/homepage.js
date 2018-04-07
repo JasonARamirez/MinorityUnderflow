@@ -34,9 +34,19 @@ router.get('/createAccount', function(req, res) {
 
 router.get('/createQuestion', function(req, res) {
   console.log('/homepage/createQuestion');
-  var data = {
-    message : '/homepage/createQuestion is not implemented yet'
-  }
+
+  var anonymousName = req.param('anonymousName');
+  var userID = req.param('userID');
+  var question = req.param('question');
+
+  homepage.createQuestion(anonymousName, userID, question, function(questionID, err) {
+    if (err == null) {
+      res.send(JSON.stringify({'success': true, 'questionID':questionID}));
+    } else {
+      res.send(JSON.stringify({'success':false, 'message':err}));
+    }
+  });
+
   res.send(JSON.stringify(data));
 });
 
