@@ -17,6 +17,10 @@ router.get('/login.html', function(req, res) {
   res.sendFile(__dirname + '/public/html/login.html');
 });
 
+router.get('/resources.html', function(req, res) {
+  res.sendFile(__dirname + '/public/html/resources.html');
+});
+
 router.get('/bootstrap.bundle.js', function(req, res) {
   res.sendFile(__dirname + '/public/javascript/bootstrap.bundle.js');
 });
