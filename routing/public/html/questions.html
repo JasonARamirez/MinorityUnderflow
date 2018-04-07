@@ -95,11 +95,11 @@
         <h2 id="anonName">Name</h2>
         <h3 id="question">Question</h3>
           <div id="comments" class="row"></div> <!-- end row comments -->
-        <form action="action_page.php">
+        <form>
           <h4 align="center">Make A Comment</h4>
           <input type="text" id="fname" name="firstname" placeholder="Anonymous Name">
           <textarea id="subject" name="subject" placeholder="Comment" style="height:100px"></textarea>
-          <input type="submit" value="Submit">
+          <input type="submit" value="Submit" onclick="answerQuestion()">
         </form>
       </div>
     </div> <!-- end comments-wrap -->

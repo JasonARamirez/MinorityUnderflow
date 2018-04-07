@@ -18,6 +18,7 @@ $(document).ready(function() {
 
       if(data.anonymousName != null) {
         sessionStorage.setItem('anonymousName', data.anonymousName);
+        $('#fname').val(data.anonymousName);
       }
 
       $('#anonName').text('Question Asker: ' + askerAnonymousName);
@@ -33,7 +34,7 @@ $(document).ready(function() {
         var cell = $('<div class="comment__content">');
         var name = $('<div class="comment__info"><cite><b>'+ anonymousName + '</b></cite></div>');
         cell.append(name);
-        var response = $('<div class="comment__text"><p>' + responseStr + '</p></div>');
+        var response = $('<div class="comment__text"><p style="width: 100%">' + responseStr + '</p></div>');
         cell.append(response);
         row.append(cell);
         mytablebody.append(row);
@@ -44,3 +45,32 @@ $(document).ready(function() {
     }
   });
 });
+
+var answerQuestion = function() {
+  if (sessionStorage.getItem("userID") == null) {
+    alert('You are not logged in');
+    return;
+  }
+
+  var questionID = sessionStorage.getItem('questionID');
+  var userID = sessionStorage.getItem('userID');
+  var anonymousName = $('#fname').val();
+  var response = $('#subject').val();
+
+  var params = {
+    userID : userID,
+    anonymousName : anonymousName,
+    questionID : questionID,
+    response : response
+  }
+
+  $.get('/question/answerQuestion', params, function(dataStr) {
+    var data = JSON.parse(dataStr);
+
+    if(data.success) {
+      location.reload();
+    }
+
+  });
+  
+}
