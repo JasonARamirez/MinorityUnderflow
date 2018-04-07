@@ -4542,7 +4542,7 @@ tbody.collapse.show {
   border-top-right-radius: calc(0.25rem - 1px);
 }
 
-.card-img-bottom {
+.card--bottom {
   width: 100%;
   border-bottom-right-radius: calc(0.25rem - 1px);
   border-bottom-left-radius: calc(0.25rem - 1px);
@@ -6074,91 +6074,91 @@ button.close {
   vertical-align: text-top !important;
 }
 
-.bg-primary {
+.background-primary {
   background-color: #007bff !important;
 }
 
-a.bg-primary:hover, a.bg-primary:focus,
-button.bg-primary:hover,
-button.bg-primary:focus {
+a.background-primary:hover, a.background-primary:focus,
+button.background-primary:hover,
+button.background-primary:focus {
   background-color: #0062cc !important;
 }
 
-.bg-secondary {
+.background-secondary {
   background-color: #6c757d !important;
 }
 
-a.bg-secondary:hover, a.bg-secondary:focus,
-button.bg-secondary:hover,
-button.bg-secondary:focus {
+a.background-secondary:hover, a.background-secondary:focus,
+button.background-secondary:hover,
+button.background-secondary:focus {
   background-color: #545b62 !important;
 }
 
-.bg-success {
+.background-success {
   background-color: #28a745 !important;
 }
 
-a.bg-success:hover, a.bg-success:focus,
-button.bg-success:hover,
-button.bg-success:focus {
+a.background-success:hover, a.background-success:focus,
+button.background-success:hover,
+button.background-success:focus {
   background-color: #1e7e34 !important;
 }
 
-.bg-info {
+.background-info {
   background-color: #17a2b8 !important;
 }
 
-a.bg-info:hover, a.bg-info:focus,
-button.bg-info:hover,
-button.bg-info:focus {
+a.background-info:hover, a.background-info:focus,
+button.background-info:hover,
+button.background-info:focus {
   background-color: #117a8b !important;
 }
 
-.bg-warning {
+.background-warning {
   background-color: #ffc107 !important;
 }
 
-a.bg-warning:hover, a.bg-warning:focus,
-button.bg-warning:hover,
-button.bg-warning:focus {
+a.background-warning:hover, a.background-warning:focus,
+button.background-warning:hover,
+button.background-warning:focus {
   background-color: #d39e00 !important;
 }
 
-.bg-danger {
+.background-danger {
   background-color: #dc3545 !important;
 }
 
-a.bg-danger:hover, a.bg-danger:focus,
-button.bg-danger:hover,
-button.bg-danger:focus {
+a.background-danger:hover, a.background-danger:focus,
+button.background-danger:hover,
+button.background-danger:focus {
   background-color: #bd2130 !important;
 }
 
-.bg-light {
+.background-light {
   background-color: #f8f9fa !important;
 }
 
-a.bg-light:hover, a.bg-light:focus,
-button.bg-light:hover,
-button.bg-light:focus {
+a.background-light:hover, a.background-light:focus,
+button.background-light:hover,
+button.background-light:focus {
   background-color: #dae0e5 !important;
 }
 
-.bg-dark {
+.background-dark {
   background-color: #343a40 !important;
 }
 
-a.bg-dark:hover, a.bg-dark:focus,
-button.bg-dark:hover,
-button.bg-dark:focus {
+a.background-dark:hover, a.background-dark:focus,
+button.background-dark:hover,
+button.background-dark:focus {
   background-color: #1d2124 !important;
 }
 
-.bg-white {
+.background-white {
   background-color: #fff !important;
 }
 
-.bg-transparent {
+.background-transparent {
   background-color: transparent !important;
 }
 
