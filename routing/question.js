@@ -11,12 +11,12 @@ router.get('/getQuestion', function(req, res) {
 });
 
 router.get('/answerQuestion', function(req, res) {
-  console.log('/question/getQuestion');
+  console.log('/question/answerQuestion');
 
-  var userID = req.param('userID');
-  var anonymousName = req.param('anonymousName');
-  var questionID = req.param('questionID');
-  var responseStr = req.param('response');
+  var userID = req.query['userID'];
+  var anonymousName = req.query['anonymousName'];
+  var questionID = req.query['questionID'];
+  var responseStr = req.query['response'];
 
   question.answerQuestion(userID, anonymousName, questionID, responseStr, function(err) {
     if (err == null) {
@@ -25,8 +25,6 @@ router.get('/answerQuestion', function(req, res) {
       res.send(JSON.stringify({'success':false, 'message':err}));
     }
   });
-
-  res.send(JSON.stringify(data));
 });
 
 module.exports = router;

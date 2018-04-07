@@ -28,5 +28,5 @@ exports.AnonymousNameData = function(userID, cb) {
 
 exports.ResponderData = function(responderID, cb) {
   var responderCollection = db.get().collection('responder_data')
-  responderCollection.findOne({"responder":responder}, cb)
+  responderCollection.find({"responder":responder}, cb)
 }
