@@ -22,7 +22,7 @@ app.use('/personal', personal);
 var question = require('./routing/question');
 app.use('/question', question);
 
-database.connect(db_url, 'minority_underflow', function(err) {
+database.connect(db_url, 'heroku_r88cxs6p', function(err) {
   if(err != null) {
     console.log(err);
   } else {

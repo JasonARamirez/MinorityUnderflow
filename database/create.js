@@ -6,6 +6,7 @@ exports.User = function(username, password, userID, cb) {
     'password':password,
     'userID':userID
   }
+  var userCollection = db.get().collection('user_data');
   userCollection.insertOne(user, function(err, result){
     cb(err);
   });
