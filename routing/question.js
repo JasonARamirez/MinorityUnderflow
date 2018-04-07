@@ -4,10 +4,21 @@ var router = express.Router();
 
 router.get('/getQuestion', function(req, res) {
   console.log('/question/getQuestion');
-  var data = {
-    message : '/question/getQuestion is not implemented yet'
-  }
-  res.send(JSON.stringify(data));
+
+  var questionID = req.query['questionID'];
+  var userID = req.query['userID'];
+
+  question.getQuestion(questionID, userID, function(questionObj, anonymousName, err) {
+    if (err == null) {
+      if (anonymousName == null) {
+        res.send(JSON.stringify({'success':true, 'qObj':questionObj}));
+      } else {
+        res.send(JSON.stringify({'success':true, 'qObj':questionObj, 'anonymousName':anonymousName}));
+      }
+    } else {
+      res.send(JSON.stringify({'success':false, 'message':err}));
+    }
+  });
 });
 
 router.get('/answerQuestion', function(req, res) {
