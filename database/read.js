@@ -1,13 +1,19 @@
 var db = require('./db')
 
-exports.UserUsernamePassword = function(username, password, cb) {
+exports.UserUsername = function(username, cb) {
   var userCollection = db.get().collection('user_data')
-  userCollection.findOne({"userName":username, "password":password} cb)
+  console.log('userusername');
+  userCollection.findOne({"username":username}, cb);
+}
+
+exports.UserUsernamePassword = function(username, password, cb) {
+  var userCollection = db.get().collection('user_data');
+  userCollection.findOne({"username":username, "password":password}, cb);
 }
 
 exports.UserUserID = function(userID, cb) {
-  var userCollection = db.get().collection('user_data')
-  userCollection.findOne({"userID":userID}, cb)
+  var userCollection = db.get().collection('user_data');
+  userCollection.findOne({"userID":userID}, cb);
 }
 
 exports.QuestionData = function(questionID, cb) {

@@ -3,7 +3,8 @@ var app = express();
 var server = require('http').Server(app);
 var port = process.env.PORT || 8080;
 var database = require('./database/db')
-const db_url = process.env.MONGODB_URI || "mongodb://heroku_p3n62pp2:vrn6ep6jmq167gogh9jhk3liuj@ds237379.mlab.com:37379/heroku_p3n62pp2";
+const db_url = process.env.MONGODB_URI || "mongodb://heroku_r88cxs6p:kolfijjdgmhu1birc6gt50cji7@ds237389.mlab.com:37389/heroku_r88cxs6p";
+
 
 app.get('/', function(req, res) {
   res.sendFile(__dirname + '/routing/public/html/index.html');
@@ -21,12 +22,12 @@ app.use('/personal', personal);
 var question = require('./routing/question');
 app.use('/question', question);
 
-database.connect(db_url, 'minority_underflow', function(err) {
+database.connect(db_url, 'heroku_r88cxs6p', function(err) {
   if(err != null) {
     console.log(err);
+  } else {
+    server.listen(port, function(){
+      console.log('listening on *:' + port);
+    });
   }
-
-  server.listen(port, function(){
-    console.log('listening on *:' + port);
-  });
 });

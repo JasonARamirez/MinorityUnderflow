@@ -6,6 +6,7 @@ exports.User = function(username, password, userID, cb) {
     'password':password,
     'userID':userID
   }
+  var userCollection = db.get().collection('user_data');
   userCollection.insertOne(user, function(err, result){
     cb(err);
   });
@@ -19,6 +20,7 @@ exports.Question = function(questionID, questionStr, askerID, askerAnonymousName
     'askerAnonymousName':askerAnonymousName,
     'time':time
   }
+  var questionCollection = db.get().collection('question_data');
   questionCollection.insertOne(question, function(err, result){
     cb(err);
   });
