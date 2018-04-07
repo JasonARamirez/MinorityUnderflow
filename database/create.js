@@ -20,6 +20,7 @@ exports.Question = function(questionID, questionStr, askerID, askerAnonymousName
     'askerAnonymousName':askerAnonymousName,
     'time':time
   }
+  var questionCollection = db.get().collection('question_data');
   questionCollection.insertOne(question, function(err, result){
     cb(err);
   });

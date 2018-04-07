@@ -78,7 +78,8 @@ exports.createQuestion = function(anonymousName, userID, question, cb) {
       if(err != null) {
         cb(null, 'Internal Server Error 1');
       } else{
-        dbCreate.Question(newQuestionID, question, userID, anonymousName, function(err) {
+        var time = new Date().getTime();
+        dbCreate.Question(newQuestionID, question, userID, anonymousName, time, function(err) {
           if(err != null) {
             cb(null, 'Internal Server Error 2');
           } else {

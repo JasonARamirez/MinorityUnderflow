@@ -35,9 +35,9 @@ router.get('/createAccount', function(req, res) {
 router.get('/createQuestion', function(req, res) {
   console.log('/homepage/createQuestion');
 
-  var anonymousName = req.query('anonymousName');
-  var userID = req.query('userID');
-  var question = req.query('question');
+  var anonymousName = req.query['anonymousName'];
+  var userID = req.query['userID'];
+  var question = req.query['question'];
 
   homepage.createQuestion(anonymousName, userID, question, function(questionID, err) {
     if (err == null) {
@@ -46,8 +46,6 @@ router.get('/createQuestion', function(req, res) {
       res.send(JSON.stringify({'success':false, 'message':err}));
     }
   });
-
-  res.send(JSON.stringify(data));
 });
 
 router.get('/getLatestQuestions', function(req, res) {
