@@ -41,6 +41,9 @@
   box-sizing: border-box;
 }
 
+
+
+
 /* -------------------------------------------------------------------
  * ## comments
  * ------------------------------------------------------------------- */
@@ -1337,6 +1340,7 @@ pre code {
     -ms-flex: 0 0 50%;
     flex: 0 0 50%;
     max-width: 50%;
+    padding: 19px;
   }
   .col-md-7 {
     -webkit-box-flex: 0;
@@ -4062,7 +4066,7 @@ tbody.collapse.show {
 }
 
 .nav {
-  display: -webkit-box;
+  display: -webkit-box ;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
