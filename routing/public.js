@@ -69,6 +69,7 @@ router.get('/bootstrap.min.css', function(req, res){
   res.sendFile(__dirname + '/public/css/bootstrap.min.css');
 })
 
+
 router.get('/background.jpg', function(req, res){
   res.sendFile(__dirname + '/public/images/background.jpg');
 })
@@ -76,6 +77,12 @@ router.get('/background.jpg', function(req, res){
 router.get('/about.jpg', function(req, res){
   res.sendFile(__dirname + '/public/images/about.jpg');
 })
+
+router.get('/logo.png', function(req, res){
+  res.sendFile(__dirname + '/public/images/logo.png')
+})
+
+
 
 
 
