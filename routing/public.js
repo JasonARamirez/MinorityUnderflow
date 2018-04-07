@@ -97,6 +97,10 @@ router.get('/index.js', function(res, res) {
   res.sendFile(__dirname + '/public/javascript/index.js');
 });
 
+router.get('/questions.js', function(req, res) {
+  res.sendFile(__dirname + '/public/javascript/questions.js');
+});
+
 
 
 
