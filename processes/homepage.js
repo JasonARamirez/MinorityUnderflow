@@ -1,3 +1,4 @@
+var async = require('async');
 var dbCreate = require('../database/create');
 var dbRead = require('../database/read');
 var utils = require('./utils');
@@ -17,6 +18,7 @@ exports.createAccount = function(username, password, cb) {
     if (err == null && result != null) {
       cb(null, 'username already exists');
     } else {
+      console.log(err);
       var userIDExists = true;
       var newUserID = '';
 
@@ -26,20 +28,22 @@ exports.createAccount = function(username, password, cb) {
           newUserID = utils.createUUID();
           dbRead.UserUserID(newUserID, function(err, result){
             if(err != null) {
+              console.log(err);
               userIDExists = false;
               callback(err)
+            } else {
+              userIDExists = result != null;
+              callback();
             }
-            userIDExists = result != null;
-            callback();
           });
         },
         function (err) {
           if(err != null) {
-            cb(null, 'Internal Server Error');
+            cb(null, 'Internal Server Error 1');
           } else{
             dbCreate.User(username, password, newUserID, function(err) {
               if(err != null) {
-                cb(null, 'Internal Server Error');
+                cb(null, 'Internal Server Error 2');
               } else {
                 cb(newUserID);
               }
@@ -61,20 +65,22 @@ exports.createQuestion = function(anonymousName, userID, question, cb) {
       newQuestionID = utils.createUUID();
       dbRead.QuestionData(newQuestionID, function(err, result){
         if(err != null) {
+          console.log(err);
           questionIDExists = false;
           callback(err)
+        } else {
+          questionIDExists = result != null;
+          callback();
         }
-        questionIDExists = result != null;
-        callback();
       });
     },
     function (err) {
       if(err != null) {
-        cb(null, 'Internal Server Error');
+        cb(null, 'Internal Server Error 1');
       } else{
         dbCreate.Question(newQuestionID, question, userID, anonymousName, function(err) {
           if(err != null) {
-            cb(null, 'Internal Server Error');
+            cb(null, 'Internal Server Error 2');
           } else {
             cb(newQuestionID);
           }

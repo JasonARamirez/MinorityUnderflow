@@ -5,8 +5,8 @@ var router = express.Router();
 router.get('/login', function(req, res) {
   console.log('/homepage/login');
 
-  var username = req.param('username');
-  var password = req.param('password');
+  var username = req.query['username'];
+  var password = req.query['password'];
 
   homepage.login(username, password, function(userID, err) {
     if (err == null) {
@@ -20,8 +20,8 @@ router.get('/login', function(req, res) {
 router.get('/createAccount', function(req, res) {
   console.log('/homepage/createAccount');
 
-  var username = req.param('username');
-  var password = req.param('password');
+  var username = req.query['username'];
+  var password = req.query['password'];
 
   homepage.createAccount(username, password, function(userID, err) {
     if (err == null) {
@@ -35,9 +35,9 @@ router.get('/createAccount', function(req, res) {
 router.get('/createQuestion', function(req, res) {
   console.log('/homepage/createQuestion');
 
-  var anonymousName = req.param('anonymousName');
-  var userID = req.param('userID');
-  var question = req.param('question');
+  var anonymousName = req.query('anonymousName');
+  var userID = req.query('userID');
+  var question = req.query('question');
 
   homepage.createQuestion(anonymousName, userID, question, function(questionID, err) {
     if (err == null) {
